@@ -1,0 +1,16 @@
+## Interface: 11200
+## Title: LazyQueue
+## Author: moh
+## Version: 1.13
+## SavedVariablesPerCharacter: LazyQueueDB
+
+Global.lua
+
+locale\Locale.lua
+locale\LocaleTable.lua
+
+locale\enUS.lua
+locale\zhCN.lua
+
+UI.lua
+Main.lua
