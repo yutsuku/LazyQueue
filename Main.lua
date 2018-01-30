@@ -10,7 +10,6 @@ frame:SetScript('OnEvent', function()
 end)
 
 frame:RegisterEvent('ADDON_LOADED')
-frame:RegisterEvent('PLAYER_ENTERING_WORLD')
 frame:RegisterEvent('BATTLEFIELDS_SHOW')
 
 function LazyQueue.Join()
@@ -41,9 +40,7 @@ function frame:ADDON_LOADED()
 	end
 	
 	LazyQueue.UI.Load()
-end
-
-function frame:PLAYER_ENTERING_WORLD()
+	
 	if not _G.LazyQueueDB.enabled then
 		return
 	end
