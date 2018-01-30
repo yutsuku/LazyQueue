@@ -11,6 +11,7 @@ end)
 
 frame:RegisterEvent('ADDON_LOADED')
 frame:RegisterEvent('BATTLEFIELDS_SHOW')
+frame:RegisterEvent('PLAYER_ENTERING_WORLD')
 
 function LazyQueue.Join()
 	if _G.LazyQueueDB.WSG then
@@ -51,6 +52,19 @@ function frame:ADDON_LOADED()
 		LazyQueue.Join()
 	end
 end
+
+function frame:PLAYER_ENTERING_WORLD()
+	if not _G.LazyQueueDB.enabled then
+		return
+	end
+	
+	-- don't attempt to queue from bg!
+	local zone = _G.GetRealZoneText()
+	if zone ~= L['Warsong Gulch'] and zone ~= L['Arathi Basin'] and zone ~= L['Alterac Valley'] then
+		LazyQueue.Join()
+	end
+end
+
 
 function frame:BATTLEFIELDS_SHOW()
 	local bg = GetBattlefieldInfo()

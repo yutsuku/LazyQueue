@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: LazyQueue
 ## Author: moh
-## Version: 1.1
+## Version: 1.2
 ## SavedVariablesPerCharacter: LazyQueueDB
 
 Global.lua
