@@ -11,7 +11,7 @@ end)
 
 frame:RegisterEvent('ADDON_LOADED')
 frame:RegisterEvent('BATTLEFIELDS_SHOW')
-frame:RegisterEvent('PLAYER_ENTERING_WORLD')
+frame:RegisterEvent('ZONE_CHANGED_NEW_AREA')
 
 function LazyQueue.Join()
 	if _G.LazyQueueDB.WSG then
@@ -53,7 +53,7 @@ function frame:ADDON_LOADED()
 	end
 end
 
-function frame:PLAYER_ENTERING_WORLD()
+function frame:ZONE_CHANGED_NEW_AREA()
 	if not _G.LazyQueueDB.enabled then
 		return
 	end
